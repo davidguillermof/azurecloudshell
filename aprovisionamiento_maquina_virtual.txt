@@ -6,12 +6,7 @@ az group create --name myResourceGroup --location eastus
 
 2. Crear maquina virtual
 
-az vm create \
-    --resource-group myResourceGroup \
-    --name myVM \
-    --image win2016datacenter \
-    --admin-username azureuser \
-    --admin-password myPassword
+az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --admin-username azureuser --admin-password myPassword
 
 3. Abrir puerto 80
 
