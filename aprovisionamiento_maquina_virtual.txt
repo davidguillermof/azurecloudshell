@@ -1,0 +1,26 @@
+Aprovisionamiento Maquina Virtual
+
+1. Crear Grupo de Recursos
+
+az group create --name myResourceGroup --location eastus
+
+2. Crear maquina virtual
+
+az vm create \
+    --resource-group myResourceGroup \
+    --name myVM \
+    --image win2016datacenter \
+    --admin-username azureuser \
+    --admin-password myPassword
+
+3. Abrir puerto 80
+
+az vm open-port --port 80 --resource-group myResourceGroup --name myVM
+
+4. Conectarse a la maquina virtual
+
+mstsc /v:publicIpAddress
+
+5. Instalar servidor web
+
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
